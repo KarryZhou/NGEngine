@@ -20,7 +20,7 @@ git git@github.com:KarryZhou/NGEngine.git
 
 创建运行目录
 - ~/opt/data   存放MySQL数据库
-- ~/opt/htdocs 项目代码
+- ~/opt/application 项目代码
 - ~/opt/log    存放所有输出Log
 -- ~opt/log/nginx nginx日志
 -- ~opt/log/php php日志
