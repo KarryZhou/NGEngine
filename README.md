@@ -6,11 +6,11 @@ MAC/WINDOWS/LINUX 已经安装过以下组件：
 ```
 Docker (https://store.docker.com/search?type=edition&offering=community)
 Docker-Compose 
-Make (MinGW for windows可不装)
+Make (MinGW for windows可不装：https://sourceforge.net/projects/mingw/)
 Git (https://git-scm.com/)
 ```
 
-## 启动NGEngine
+## 获取NGEngine
 
 创建根目录
 切换到根目录，git克隆本项目
@@ -24,14 +24,12 @@ git git@github.com:KarryZhou/NGEngine.git
 - ~/opt/log    存放所有输出Log
 
 下载镜像及构建(当前配置可以不下载构建)
-
 ```
 make dl
 make build
 ```
-
+## 启动NGEngine
 构建及运行环境
-
 ```
 docker-compose build
 docker-compose up
