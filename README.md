@@ -1,17 +1,19 @@
-# Run Under Mac
+# Run
 
 ## 环境要求
 
 MAC/WINDOWS/LINUX 已经安装过以下组件：
-Docker
-Docker-Compose
-Make
-Git
+```
+Docker (https://store.docker.com/search?type=edition&offering=community)
+Docker-Compose 
+Make (MinGW for windows可不装)
+Git (https://git-scm.com/)
+```
 
 ## 启动NGEngine
 
 创建根目录
-切换到根目录,git克隆本项目
+切换到根目录，git克隆本项目
 ```
 git git@github.com:KarryZhou/NGEngine.git
 ```
@@ -34,11 +36,15 @@ make build
 docker-compose build
 docker-compose up
 ```
+停止
+```
+docker-compose down
+```
 
 修改本机域名解析
 
 ```
-sudo vi /etc/hosts
+hosts
 加入
 127.0.0.1  local.app1.com
 127.0.0.1  local.tutorial.com
