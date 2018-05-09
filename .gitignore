@@ -1,0 +1,6 @@
+opt/data/*
+opt/log/*
+gearman/*.tgz
+elasticsearch/*.zip
+.DS_Store
+!.gitignore

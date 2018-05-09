@@ -1,0 +1,46 @@
+version: '2'
+services:
+    nginx:
+        build: ./nginx
+        ports:
+          - "80:80"
+        links:
+          - php
+        depends_on:
+          - php
+        volumes:
+          - ./opt:/opt
+
+    php:
+        build: ./php
+        ports:
+          - "9000:9000"
+        links:
+          - mysql
+          - memcache
+          - redis
+        volumes:
+          - ./opt:/opt
+        environment:
+            MYSQL_PASSWORD: 123456
+
+    mysql:
+        build: ./mysql
+        expose:
+          - "3306"
+        ports:
+          - "3306:3306"
+        volumes:
+          - ./opt/data/mysql:/var/lib/mysql
+        environment:
+          MYSQL_ROOT_PASSWORD: 123456
+
+    memcache:
+        build: ./memcache
+        ports:
+          - "11211:11211"
+
+    redis:
+        build: ./redis
+        ports:
+          - "6379:6379"
