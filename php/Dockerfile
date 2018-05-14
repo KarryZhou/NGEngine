@@ -19,7 +19,7 @@ COPY extensions/msgpack.tgz /home/msgpack.tgz
 COPY extensions/xdebug.tgz /home/xdebug.tgz
 COPY extensions/memcache.tgz /home/memcache.tgz
 COPY extensions/xhprof.tgz /home/xhprof.tgz
-COPY extensions/cphalcon.tgz /home/cphalcon.tgz
+COPY extensions/cphalcon.tar.gz /home/cphalcon.tar.gz
 
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
         && docker-php-ext-install zip \
@@ -34,7 +34,7 @@ RUN pecl install /home/memcached.tgz && echo "extension=memcached.so" > /usr/loc
         && pecl install /home/xhprof.tgz && echo "extension=xhprof.so" > /usr/local/etc/php/conf.d/xhprof.ini \
         && pecl install /home/xdebug.tgz && echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20131226/xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini
 RUN cd /home \
-    && tar -xvf cphalcon.tgz \
+    && tar -xvf cphalcon.tar.gz \
     && mv cphalcon-* phalcon \
     && cd phalcon/build && ./install && echo "extension=phalcon.so" > /usr/local/etc/php/conf.d/phalcon.ini
 
